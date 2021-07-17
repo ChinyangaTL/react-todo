@@ -1,13 +1,103 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-blue-dark: hsl(235, 21%, 11%);
+  --clr-blue-dark--desat: hsl(235, 24%, 19%);
+  --clr-blue-light-gray: hsl(234, 39%, 85%);
+  --clr-blue-light-gray-hover: hsl(236, 33%, 92%);
+  --clr-blue-dark-gray: hsl(233, 14%, 35%);
+  --clr-blue-dark-gray-2: hsl(233, 14%, 35%);
+  --clr-check-background: linear-gradient(
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  --clr-bright-blue: hsl(220, 98%, 61%);
+}
+
+body {
+  background-color: var(--clr-blue-light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-blue-light-gray);
+  font-family: 'Josefin Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 500px;
+  background-color: blue;
+}
+
+h1 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-weight: 700;
+}
+
+h1.light {
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+.circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-blue-dark-gray);
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.circle:hover,
+.circle:focus {
+  border: 1px solid hsl(280, 87%, 65%);
+}
+
+.circle.completed {
+  background: var(--clr-check-background);
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--clr-blue-dark-gray);
+  background-color: var(--clr-blue-dark);
+}
+
+.list-item--left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.active {
+  color: hsl(220, 98%, 61%);
 }

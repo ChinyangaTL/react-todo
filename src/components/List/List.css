@@ -1,0 +1,15 @@
+.list-container {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.list-item.list--footer {
+  padding: 0.15rem 0.75rem;
+}
+
+.list--footer button {
+  color: inherit;
+  letter-spacing: 1px;
+  font-weight: 700;
+}

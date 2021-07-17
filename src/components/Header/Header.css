@@ -1,0 +1,35 @@
+.header--top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  /* padding: 1rem; */
+  /* background-color: blue; */
+}
+
+.toggle-icon {
+  color: #fff;
+  font-size: 18px;
+}
+
+.header--input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+form input {
+  font-size: 18px;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  font-weight: 400;
+}

@@ -1,0 +1,4 @@
+p.completed {
+  color: hsl(233, 14%, 35%);
+  text-decoration: line-through;
+}
