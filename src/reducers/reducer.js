@@ -8,6 +8,7 @@ import {
   SHOW_COMPLETED,
   SHOW_REMAINING,
   TOGGLE_ACTIVE,
+  TOGGLE_THEME,
   UPDATE_TODO,
 } from '../constants/actionTypes';
 import _ from 'lodash';
@@ -31,7 +32,7 @@ const reducer = (state, action) => {
     const newItems = state.list.filter(
       (listItem) => listItem.id !== action.payload
     );
-    return { ...state, list: newItems, remaining: newItems.length };
+    return { ...state, list: newItems, allTodos:newItems, remaining: newItems.length };
   }
 
   if (action.type === TOGGLE_ACTIVE) {
@@ -101,6 +102,17 @@ const reducer = (state, action) => {
 
   if (action.type === UPDATE_TODO) {
     return { ...state, list: action.payload };
+  }
+
+  if(action.type === TOGGLE_THEME) {
+    if(state.theme === 'light-theme') {
+      return {...state, theme: 'dark-theme'}
+
+    }
+    if(state.theme === 'dark-theme') {
+      return {...state, theme: 'light-theme'}
+      
+    }
   }
   return state;
 };

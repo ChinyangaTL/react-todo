@@ -11,24 +11,34 @@ import {
   SHOW_REMAINING,
   UPDATE_TODO,
   HANDLE_FILTER,
+  TOGGLE_THEME,
 } from '../constants/actionTypes';
 import _ from 'lodash';
 import data from '../data';
 import reducer from '../reducers/reducer';
 const AppContext = React.createContext();
 
-const getLocalStorage = () => {
+const getLocalStorageTodos = () => {
   let todos = localStorage.getItem('todos');
   if (todos) {
-    console.log('todos returned');
+    // console.log('todos returned');
     return (todos = JSON.parse(localStorage.getItem('todos')));
   }
   return data;
 };
 
+const getLocalStorageTheme = () => {
+  let theme = 'dark-theme'
+  if(localStorage.getItem('theme')) {
+    theme = JSON.parse(localStorage.getItem('theme'))
+  }
+  return theme
+}
+
 const initialState = {
-  list: getLocalStorage(),
+  list: getLocalStorageTodos(),
   remaining: 0,
+  theme: getLocalStorageTheme()
 };
 
 let allTodos = _.cloneDeep(initialState.list);
@@ -80,9 +90,18 @@ const AppProvider = ({ children }) => {
     dispatch({ type: UPDATE_TODO, payload: list });
   };
 
+  const toggleTheme = () => {
+    dispatch({type: TOGGLE_THEME})
+  }
+
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(state.list));
   }, [state.list]);
+
+  useEffect(() => {
+    document.documentElement.className = state.theme
+    localStorage.setItem('theme', JSON.stringify(state.theme));
+  }, [state.theme]);
 
   useEffect(() => {
     dispatch({ type: SHOW_REMAINING });
@@ -101,6 +120,7 @@ const AppProvider = ({ children }) => {
         emitToast,
         updateTodoList,
         handleFilter,
+        toggleTheme
       }}
     >
       {children}

@@ -7,9 +7,9 @@
 }
 
 :root {
-  --clr-blue-dark: hsl(235, 21%, 11%);
-  --clr-blue-dark--desat: hsl(235, 24%, 19%);
-  --clr-blue-light-gray: hsl(234, 39%, 85%);
+  --clr-main-bcg: hsl(235, 21%, 11%);
+  --clr-list-bcg: hsl(235, 24%, 19%);
+  --clr-text: hsl(234, 39%, 85%);
   --clr-blue-light-gray-hover: hsl(236, 33%, 92%);
   --clr-blue-dark-gray: hsl(233, 14%, 35%);
   --clr-blue-dark-gray-2: hsl(233, 14%, 35%);
@@ -20,15 +20,46 @@
   --clr-bright-blue: hsl(220, 98%, 61%);
 }
 
+.dark-theme {
+  --clr-main-bcg: hsl(235, 21%, 11%);
+  --clr-list-bcg: hsl(235, 24%, 19%);
+  --clr-text: hsl(234, 39%, 85%);
+  --clr-blue-light-gray-hover: hsl(236, 33%, 92%);
+  --clr-blue-dark-gray: hsl(233, 14%, 35%);
+  --clr-blue-dark-gray-2: hsl(233, 14%, 35%);
+  --clr-check-background: linear-gradient(
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  --clr-bright-blue: hsl(220, 98%, 61%);
+}
+
+.light-theme {
+  --clr-main-bcg: hsl(0, 0%, 98%);
+  --clr-list-bcg: hsl(233, 11%, 84%);
+  /* --clr-list-bcg: hsl(236, 33%, 92%); */
+  --clr: hsl(236, 33%, 92%);
+  --clr-2: hsl(233, 11%, 84%);
+  --clr-3: hsl(236, 9%, 61%);
+  --clr-text:  hsl(235, 19%, 35%);
+
+   
+}
+
 body {
-  background-color: var(--clr-blue-light-gray);
+  /* background-color: var(--clr-blue-light-gray); */
+  background-color: var(--clr-main-bcg);
+  /* background-image: url('./images/bg-desktop-dark.jpg'); */
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--clr-blue-light-gray);
+  overflow: hidden;
+  /* color: var(--clr-blue-light-gray); */
   font-family: 'Josefin Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: all 0.3s linear;
 }
 
 .container {
@@ -37,8 +68,9 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 500px;
-  background-color: blue;
+  min-width: 300px;
+  /* max-width: 400px; */
+  /* background-color: blue; */
 }
 
 h1 {
@@ -46,10 +78,6 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 8px;
   font-weight: 700;
-}
-
-h1.light {
-  color: #000;
 }
 
 ul {
@@ -83,7 +111,7 @@ ul {
   justify-content: space-between;
   padding: 0.5rem 0.75rem;
   border-bottom: 1px solid var(--clr-blue-dark-gray);
-  background-color: var(--clr-blue-dark);
+  background-color: var(--clr-blue-dark-grey);
 }
 
 .list-item--left {
@@ -101,3 +129,4 @@ ul {
 .btn.active {
   color: hsl(220, 98%, 61%);
 }
+

@@ -73,7 +73,7 @@ const List = () => {
           {(provided) => (
             <ul {...provided.droppableProps} ref={provided.innerRef}>
               {list.length === 0 && (
-                <p className="no-tasks-left">No Items in List</p>
+                <p className="list--empty">No Items in List</p>
               )}
               {list.map((item, index) => {
                 return (
@@ -99,20 +99,23 @@ const List = () => {
         <p>{remaining} items left</p>
         <div className="btn-group">
           <button
-            // className={`${activeButton === 'All' ? 'btn active' : 'btn'}`}
-            onClick={() => handleFilter('All')}
+          value='All'
+            className={`${activeButton === 0 ? 'btn active' : 'btn'}`}
+            onClick={(e) => handleFilterToggle(e)}
           >
             All
           </button>
           <button
-            // className={`${activeButton === 'Active' ? 'btn active' : 'btn'}`}
-            onClick={() => handleFilter('Active')}
+          value='Active'
+            className={`${activeButton === 1 ? 'btn active' : 'btn'}`}
+            onClick={(e) => handleFilterToggle(e)}
           >
             Active
           </button>
           <button
-            // className={`${activeButton === 'Completed' ? 'btn active' : 'btn'}`}
-            onClick={() => handleFilter('Completed')}
+          value='Completed'
+            className={`${activeButton === 2 ? 'btn active' : 'btn'}`}
+            onClick={(e) => handleFilterToggle(e)}
           >
             Completed
           </button>

@@ -2,6 +2,9 @@
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
+  color: var(--clr-text);
+  background-color: var(--clr-list-bcg);
+  box-shadow: 35px 32px 5px 12px rgba(0,0,0,0.09);
 }
 
 .list-item.list--footer {
@@ -12,4 +15,17 @@
   color: inherit;
   letter-spacing: 1px;
   font-weight: 700;
+}
+
+.list--empty {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.btn-group .btn {
+  padding: 0.7rem 0;
+}
+
+.btn-group .btn {
+  margin: 0 1rem;
 }

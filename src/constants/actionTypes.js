@@ -13,3 +13,5 @@ export const HANDLE_FILTER = 'HANDLE_FILTER';
 export const CREATE_TODO = 'CREATE_TODO';
 
 export const UPDATE_TODO = 'UPDATE_TODO';
+
+export const TOGGLE_THEME = 'TOGGLE_THEME'
