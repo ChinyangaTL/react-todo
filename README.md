@@ -43,8 +43,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/ChinyangaTL/](https://github.com/ChinyangaTL/)
+- Live Site URL: [react-todo-contextapi.netlify.app](react-todo-contextapi.netlify.app)
 
 ## My process
 
